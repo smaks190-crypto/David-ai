@@ -25,6 +25,24 @@ jobs:
       - name: Set up Android SDK
         uses: android-actions/setup-android@v3
 
+      - name: Install Android SDK packages
+        shell: bash
+        run: |
+          SDK_ROOT="${ANDROID_SDK_ROOT:-${ANDROID_HOME:-/usr/local/lib/android/sdk}}"
+          CMDLINE_TOOLS="$SDK_ROOT/cmdline-tools/latest/bin/sdkmanager"
+
+          if [ ! -x "$CMDLINE_TOOLS" ]; then
+            CMDLINE_TOOLS="$SDK_ROOT/cmdline-tools/16.0/bin/sdkmanager"
+          fi
+
+          if [ ! -x "$CMDLINE_TOOLS" ]; then
+            echo "sdkmanager not found in $SDK_ROOT"
+            exit 1
+          fi
+
+          yes | "$CMDLINE_TOOLS" --licenses >/dev/null
+          "$CMDLINE_TOOLS" --install "platform-tools" "platforms;android-36" "build-tools;36.0.0"
+
       - name: Setup Gradle
         uses: gradle/actions/setup-gradle@v4
         with:
@@ -35,11 +53,11 @@ jobs:
           if [ ! -f debug.keystore ] && [ -f debug.keystore.base64 ]; then
             base64 -d debug.keystore.base64 > debug.keystore
           elif [ ! -f debug.keystore ]; then
-            keytool -genkeypair -v -keystore debug.keystore -storepass android -alias androiddebugkey -keypass android -keyalg RSA -keysize 2048 -validity 10000 -dname "CN=Android Debug,O=Android,C=US"
+            keytool -genkeypair -v -keystore debug.keystore -storepass android -alias androiddebugkey -keypass android -keyalg RSA -keysize 2048 -validity 10000 -dname "CN=Android Debug,O=Android,OU=Android,C=US"
           fi
 
       - name: Build Debug APK
-        run: gradle assembleDebug --stacktrace
+        run: ./gradlew assembleDebug --stacktrace
 
       - name: Upload Debug APK
         uses: actions/upload-artifact@v4
