@@ -45,6 +45,15 @@ jobs:
             keytool -genkeypair -v -keystore debug.keystore -storepass android -alias androiddebugkey -keypass android -keyalg RSA -keysize 2048 -validity 10000 -dname "CN=Android Debug, OU=Android, O=Android, L=Mountain View, ST=California, C=US"
           fi
 
+      - name: Make gradlew executable
+        run: |
+          if [ -f ./gradlew ]; then
+            chmod +x ./gradlew
+            ls -l ./gradlew
+          else
+            echo "Warning: ./gradlew not found"
+          fi
+
       - name: Build Debug APK
         run: ./gradlew assembleDebug --stacktrace
 
