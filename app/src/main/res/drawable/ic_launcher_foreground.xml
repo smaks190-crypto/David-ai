@@ -4,56 +4,34 @@
     android:height="108dp"
     android:viewportWidth="108"
     android:viewportHeight="108">
-    <!-- Undertale Soul Heart Silhouette (Pixel blocks) -->
-    <!-- Heart outer black pixel border -->
+    <!-- Glowing Neon D / Wallet / Chart Icon (Centered in 66dp safe zone) -->
+    <!-- Base Wallet / Card Shape -->
     <path
-        android:fillColor="#000000"
-        android:pathData="
-            M36,36 h12 v4 h-12 z
-            M60,36 h12 v4 h-12 z
-            M32,40 h4 v8 h-4 z
-            M48,40 h12 v4 h-12 z
-            M72,40 h4 v8 h-4 z
-            M28,48 h4 v16 h-4 z
-            M76,48 h4 v16 h-4 z
-            M32,64 h4 v8 h-4 z
-            M72,64 h4 v8 h-4 z
-            M36,72 h4 v6 h-4 z
-            M68,72 h4 v6 h-4 z
-            M40,78 h6 v4 h-6 z
-            M62,78 h6 v4 h-6 z
-            M46,82 h6 v4 h-6 z
-            M56,82 h6 v4 h-6 z
-            M52,86 h4 v4 h-4 z
-        " />
+        android:fillColor="#1E293B"
+        android:pathData="M28,34 C28,30.686 30.686,28 34,28 L74,28 C77.314,28 80,30.686 80,34 L80,74 C80,77.314 77.314,80 74,80 L34,80 C30.686,80 28,77.314 28,74 Z" />
 
-    <!-- Red Soul Body -->
+    <!-- Neon Indigo Border -->
     <path
-        android:fillColor="#FF1E27"
-        android:pathData="
-            M36,40 h12 v8 h-12 z
-            M60,40 h12 v8 h-12 z
-            M32,48 h44 v16 h-44 z
-            M36,64 h36 v8 h-36 z
-            M40,72 h28 v6 h-28 z
-            M46,78 h16 v4 h-16 z
-            M52,82 h4 v4 h-4 z
-        " />
+        android:strokeColor="#6366F1"
+        android:strokeWidth="2.5"
+        android:pathData="M34,28 L74,28 C77.314,28 80,30.686 80,34 L80,74 C80,77.314 77.314,80 74,80 L34,80 C30.686,80 28,77.314 28,74 Z" />
 
-    <!-- Bright Red Highlight -->
+    <!-- Neon Emerald Ascending Growth Bars -->
     <path
-        android:fillColor="#FF6B72"
-        android:pathData="
-            M36,44 h8 v4 h-8 z
-            M60,44 h8 v4 h-8 z
-            M34,48 h4 v10 h-4 z
-        " />
+        android:fillColor="#10B981"
+        android:pathData="M36,66 L42,66 L42,56 L36,56 Z" />
+    <path
+        android:fillColor="#06B6D4"
+        android:pathData="M46,66 L52,66 L52,48 L46,48 Z" />
+    <path
+        android:fillColor="#6366F1"
+        android:pathData="M56,66 L62,66 L62,40 L56,40 Z" />
+    <path
+        android:fillColor="#F43F5E"
+        android:pathData="M66,66 L72,66 L72,34 L66,34 Z" />
 
-    <!-- Hospital White Cross on the Soul -->
+    <!-- Microphone / Voice Dot Sparkle (Top-Right) -->
     <path
-        android:fillColor="#FFFFFF"
-        android:pathData="
-            M51,50 h6 v18 h-6 z
-            M45,56 h18 v6 h-18 z
-        " />
+        android:fillColor="#10B981"
+        android:pathData="M54,20 L56,24 L60,26 L56,28 L54,32 L52,28 L48,26 L52,24 Z" />
 </vector>

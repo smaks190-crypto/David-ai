@@ -1,6 +1,6 @@
 {
-  "name": "DUROTALE",
-  "description": "Ретро 2D-игра в стиле Undertale: Побег из Дурки с процедурным звуком и пиксельной графикой на Jetpack Compose",
+  "name": "David Finance",
+  "description": "Финансовый трекер и бюджет с ИИ-ассистентом David и живым голосовым вводом",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }
