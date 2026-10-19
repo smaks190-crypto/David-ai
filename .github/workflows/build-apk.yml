@@ -12,8 +12,7 @@ jobs:
     name: Build Debug APK
     runs-on: ubuntu-latest
     env:
-      # where we'll install the SDK for this runner
-      ANDROID_SDK_ROOT: ${{ runner.home }}/android-sdk
+      # where we'll install the cancel-timeout-minutes: 
 
     steps:
       - name: Checkout repository
