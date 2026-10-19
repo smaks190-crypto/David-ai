@@ -11,8 +11,6 @@ jobs:
   build:
     name: Build Debug APK
     runs-on: ubuntu-latest
-    env:
-      # where we'll install the cancel-timeout-minutes: 
 
     steps:
       - name: Checkout repository
