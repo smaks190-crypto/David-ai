@@ -35,9 +35,9 @@ jobs:
           unzip -q cmdline-tools.zip -d cmdline-tools-temp
 
           # Use rsync to merge the downloaded cmdline-tools into the expected "latest" layout.
-          # rsync is idempotent and won't fail if the destination already exists.
+          # Don't preserve owner/group when copying into system-owned locations (prevents chgrp/chown failures on runners).
           mkdir -p cmdline-tools/latest
-          rsync -a cmdline-tools-temp/cmdline-tools/ cmdline-tools/latest/
+          rsync -a --no-owner --no-group cmdline-tools-temp/cmdline-tools/ cmdline-tools/latest/
           rm -rf cmdline-tools.zip cmdline-tools-temp
 
           # Ensure sdkmanager is on PATH
@@ -63,7 +63,7 @@ jobs:
           if [ ! -f debug.keystore ] && [ -f debug.keystore.base64 ]; then
             base64 -d debug.keystore.base64 > debug.keystore
           elif [ ! -f debug.keystore ]; then
-            keytool -genkeypair -v -keystore debug.keystore -storepass android -alias androiddebugkey -keypass android -keyalg RSA -keysize 2048 -validity 10000 -dname "CN=Android Debug,O=Android,..."
+            keytool -genkeypair -v -keystore debug.keystore -storepass android -alias androiddebugkey -keypass android -keyalg RSA -keysize 2048 -validity 10000 -dname "CN=Android Debug,O=Android,[...]"
           fi
 
       - name: Build Debug APK
