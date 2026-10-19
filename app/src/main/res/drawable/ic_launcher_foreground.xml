@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <!-- Undertale Soul Heart Silhouette (Pixel blocks) -->
+    <!-- Heart outer black pixel border -->
+    <path
+        android:fillColor="#000000"
+        android:pathData="
+            M36,36 h12 v4 h-12 z
+            M60,36 h12 v4 h-12 z
+            M32,40 h4 v8 h-4 z
+            M48,40 h12 v4 h-12 z
+            M72,40 h4 v8 h-4 z
+            M28,48 h4 v16 h-4 z
+            M76,48 h4 v16 h-4 z
+            M32,64 h4 v8 h-4 z
+            M72,64 h4 v8 h-4 z
+            M36,72 h4 v6 h-4 z
+            M68,72 h4 v6 h-4 z
+            M40,78 h6 v4 h-6 z
+            M62,78 h6 v4 h-6 z
+            M46,82 h6 v4 h-6 z
+            M56,82 h6 v4 h-6 z
+            M52,86 h4 v4 h-4 z
+        " />
+
+    <!-- Red Soul Body -->
+    <path
+        android:fillColor="#FF1E27"
+        android:pathData="
+            M36,40 h12 v8 h-12 z
+            M60,40 h12 v8 h-12 z
+            M32,48 h44 v16 h-44 z
+            M36,64 h36 v8 h-36 z
+            M40,72 h28 v6 h-28 z
+            M46,78 h16 v4 h-16 z
+            M52,82 h4 v4 h-4 z
+        " />
+
+    <!-- Bright Red Highlight -->
+    <path
+        android:fillColor="#FF6B72"
+        android:pathData="
+            M36,44 h8 v4 h-8 z
+            M60,44 h8 v4 h-8 z
+            M34,48 h4 v10 h-4 z
+        " />
+
+    <!-- Hospital White Cross on the Soul -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="
+            M51,50 h6 v18 h-6 z
+            M45,56 h18 v6 h-18 z
+        " />
+</vector>
